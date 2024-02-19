@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import "./styles.css";
 
@@ -7,22 +7,23 @@ const LoadMoreData = () => {
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
   const [disableButton, setDisableButton] = useState(false);
+  let shouldFetch = useRef(true);
 
   const fetchProducts = async () => {
-    const url = `https://dummyjson.com/products?limit=20&skip=${
-      count === 0 ? 0 : count * 20
-    }`;
-    console.log('Url', url);
     try {
       setLoading(true);
-      const response = await fetch(url);
+      const response = await fetch(
+        `https://dummyjson.com/products?limit=20&skip=${
+          count === 0 ? 0 : count * 20
+        }`
+      );
       const data = await response.json();
 
       if (data && data.products && data.products.length) {
         setProducts((prevData) => [...prevData, ...data.products]);
         setLoading(false);
-        console.log("Data ", data);
       }
+      console.log("Data ", data);
     } catch (e) {
       console.log("Error ", e);
       setLoading(false);
@@ -30,7 +31,10 @@ const LoadMoreData = () => {
   };
 
   useEffect(() => {
-    fetchProducts();
+    if (shouldFetch) {
+      fetchProducts();
+      shouldFetch = false;
+    }
   }, [count]);
 
   useEffect(() => {
