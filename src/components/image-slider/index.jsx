@@ -16,6 +16,7 @@ const ImageSlider = ({ url, limit = 5, page = 1 }) => {
   const handlePrevious = () => {
     setCurrentSlide(currentSlide === 0 ? images.length - 1 : currentSlide - 1);
   };
+
   const fetchImages = async (getUrl) => {
     try {
       setLoading(true);
@@ -57,7 +58,11 @@ const ImageSlider = ({ url, limit = 5, page = 1 }) => {
               key={imageItem.id}
               alt={imageItem.download_url}
               src={imageItem.download_url}
-              className={ currentSlide === index ? "current-image" : "current-image hide-current-image"}
+              className={
+                currentSlide === index
+                  ? "current-image"
+                  : "current-image hide-current-image"
+              }
             />
           ))
         : null}
@@ -70,7 +75,11 @@ const ImageSlider = ({ url, limit = 5, page = 1 }) => {
           ? images.map((_, index) => (
               <button
                 key={index}
-                className={currentSlide === index ? "current-indicator" : "current-indicator inactive-indicator"}
+                className={
+                  currentSlide === index
+                    ? "current-indicator"
+                    : "current-indicator inactive-indicator"
+                }
                 onClick={() => setCurrentSlide(index)}
               ></button>
             ))
