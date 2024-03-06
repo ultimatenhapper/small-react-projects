@@ -10,6 +10,7 @@ import ScrollIndicator from "./components/scroll-indicator";
 import StartRating from "./components/star-rating";
 import TreeView from "./components/tree-view";
 import { menus } from "./components/tree-view/data";
+import ModalTest from "./custom-modal-popup/modal-test";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
       <QRCodeGenerator />
       <LightDarkMode /> */}
       {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} /> */}
-      <TabTest />
+      {/* <TabTest /> */}
+      <ModalTest />
     </div>
   );
 }
