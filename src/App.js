@@ -15,6 +15,7 @@ import StartRating from "./components/star-rating";
 import TicTacToe from "./components/tic-tac-toe";
 import TreeView from "./components/tree-view";
 import { menus } from "./components/tree-view/data";
+import UseFetchHookTest from "./components/use-fetch/test";
 import ModalTest from "./custom-modal-popup/modal-test";
 
 function App() {
@@ -34,9 +35,10 @@ function App() {
       {/* <GithubProfileFinder /> */}
       {/* <SearchAutocomplete /> */}
       {/* <TicTacToe /> */}
-      <FeatureFlagGlobalState>
+      {/* <FeatureFlagGlobalState>
         <FeatureFlags />
-      </FeatureFlagGlobalState>
+      </FeatureFlagGlobalState> */}
+      <UseFetchHookTest />
     </div>
   );
 }
