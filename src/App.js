@@ -17,6 +17,7 @@ import TreeView from "./components/tree-view";
 import { menus } from "./components/tree-view/data";
 import UseFetchHookTest from "./components/use-fetch/test";
 import UseOnClickOutsideTest from "./components/use-outside-click/test";
+import UseWindowResizeTest from "./components/use-window-resize/test";
 import ModalTest from "./custom-modal-popup/modal-test";
 
 function App() {
@@ -40,7 +41,8 @@ function App() {
         <FeatureFlags />
       </FeatureFlagGlobalState> */}
       {/* <UseFetchHookTest /> */}
-      <UseOnClickOutsideTest />
+      {/* <UseOnClickOutsideTest /> */}
+      <UseWindowResizeTest />
     </div>
   );
 }
