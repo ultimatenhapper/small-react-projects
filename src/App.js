@@ -18,7 +18,9 @@ import { menus } from "./components/tree-view/data";
 import UseFetchHookTest from "./components/use-fetch/test";
 import UseOnClickOutsideTest from "./components/use-outside-click/test";
 import UseWindowResizeTest from "./components/use-window-resize/test";
-import ModalTest from "./custom-modal-popup/modal-test";
+import ModalTest from "./components/custom-modal-popup/modal-test";
+import ScrollTopBottom from "./components/scroll-top-bottom";
+import ScrollToSection from "./components/scroll-top-bottom/ScrollToSection";
 
 function App() {
   return (
@@ -42,7 +44,9 @@ function App() {
       </FeatureFlagGlobalState> */}
       {/* <UseFetchHookTest /> */}
       {/* <UseOnClickOutsideTest /> */}
-      <UseWindowResizeTest />
+      {/* <UseWindowResizeTest /> */}
+      {/* <ScrollTopBottom /> */}
+      <ScrollToSection />
     </div>
   );
 }
