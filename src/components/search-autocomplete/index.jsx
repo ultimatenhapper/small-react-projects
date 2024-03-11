@@ -35,10 +35,10 @@ function SearchAutocomplete() {
         setLoading(false);
         setError(null);
       }
-    } catch (error) {
+    } catch (err) {
       setLoading(false);
-      console.log(error);
-      setError(error);
+      console.log(err);
+      setError(err);
     }
   }
 
